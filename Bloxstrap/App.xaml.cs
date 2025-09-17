@@ -19,15 +19,15 @@ namespace Voidstrap
     public partial class App : Application
     {
 #if QA_BUILD
-        public const string ProjectName = "Voidstrap-QA";
+        public const string ProjectName = "Extisstrap-QA";
 #else
-        public const string ProjectName = "Voidstrap";
+        public const string ProjectName = "Extisstrap";
 #endif
-        public const string ProjectOwner = "Voidstrap";
-        public const string ProjectRepository = "/voidstrap/Voidstrap/";
-        public const string ProjectDownloadLink = "https://github.com/voidstrap/Voidstrap/releases";
+        public const string ProjectOwner = "Extisstrap";
+        public const string ProjectRepository = "/ExtisOnTop/ExtisStrap/";
+        public const string ProjectDownloadLink = "https://github.com/ExtisOnTop/ExtisStrap/releases";
         public const string ProjectHelpLink = "https://github.com/BloxstrapLabs/Bloxstrap/wiki";
-        public const string ProjectSupportLink = "https://github.com/voidstrap/Voidstrap/issues/new";
+        public const string ProjectSupportLink = "https://github.com/ExtisOnTop/ExtisStrap/issues/new";
 
         public const string RobloxPlayerAppName = "RobloxPlayerBeta";
         public const string RobloxStudioAppName = "RobloxStudioBeta";
@@ -186,7 +186,7 @@ namespace Voidstrap
                 Logger.WriteLine(LOG_IDENT, $"Detected unsupported Windows version ({Environment.OSVersion.Version}).");
 
                 if (!LaunchSettings.QuietFlag.Active)
-                    Frontend.ShowMessageBox("Your Windows Version is not supported with Voidstrap!", MessageBoxImage.Error);
+                    Frontend.ShowMessageBox("Your Windows Version is not supported with ExtisStrap!", MessageBoxImage.Error);
 
                 Terminate(ErrorCode.ERROR_INVALID_FUNCTION);
             }
@@ -200,18 +200,18 @@ namespace Voidstrap
                 Logger = new ConsoleLogger() { Level = LogLevel.Warning }
             };
 
-            if (Settings.Prop.VoidstrapRPCReal)
+            if (Settings.Prop.ExtisStrapRPCReal)
             {
                 DiscordClient.Initialize();
 
                 // Set presence only after initialization
                 DiscordClient.SetPresence(new DiscordRPC.RichPresence()
                 {
-                    State = "Using Voidstrap",
+                    State = "Using ExtisStrap",
                     Assets = new DiscordRPC.Assets()
                     {
                         LargeImageKey = "large_image",
-                        LargeImageText = "Voidstrap"
+                        LargeImageText = "ExtisStrap"
                     }
                 });
             }
@@ -361,7 +361,7 @@ namespace Voidstrap
                     HardwareAcceleration.MinimizeMemoryFootprint();
                 }
 
-                if (Settings?.Prop?.VoidstrapRPCReal == true)
+                if (Settings?.Prop?.ExtisStrapRPCReal == true)
                 {
                     InitializeDiscordRPC();
                 }
@@ -395,4 +395,5 @@ namespace Voidstrap
             base.OnExit(e);
         }
     }
+
 }
